@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:learningflutter/utils/routes.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  String name = "";
   @override
   Widget build(BuildContext context) {
     return Material(
         color: Colors.white,
-        child: Column(
+        child: SingleChildScrollView(
+            child: Column(
           children: [
             Image.asset(
               "assets/images/login.png",
@@ -15,7 +23,7 @@ class LoginPage extends StatelessWidget {
               height: 30,
             ),
             Text(
-              "Welcome To My App",
+              "Welcome To My App $name",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 30,
@@ -29,34 +37,42 @@ class LoginPage extends StatelessWidget {
                   const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
               child: Column(
                 children: [
-                TextFormField(
-                  decoration: InputDecoration(
-                    hintText: "Enter UserName",
-                    labelText: "UserName",
+                  TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Enter UserName",
+                      labelText: "UserName",
+                    ),
+                    onChanged: (value) {
+                      name = value;
+                      setState(() {});
+                    },
                   ),
-                ),
-                TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: "Enter Password",
-                    labelText: "Password",
+                  TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      hintText: "Enter Password",
+                      labelText: "Password",
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                ElevatedButton(
-                  child: Text("Login"),
-                  style: ButtonStyle(foregroundColor:),
-                  // style: TextStyle(
-                  //   color: Colors.white,
-                  // ),
-                  onPressed: () {},
-                )
-              ]),
-            ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  ElevatedButton(
+                    child: Text("Login"),
+                    style: TextButton.styleFrom(minimumSize: Size(150, 60)),
+
+                    // style: TextStyle(
+                    //   color: Colors.white,
+                    // ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
+                    },
+                  )
+                ],
+              ),
+            )
           ],
-        ));
+        )));
   }
 }
 

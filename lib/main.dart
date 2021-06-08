@@ -35,4 +35,4 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// 1 hour 10 min is watched of the tutorial 'master in flutter in 30 days'
+
