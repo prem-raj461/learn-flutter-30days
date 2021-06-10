@@ -7,7 +7,12 @@ class Item {
   final String image;
 
   Item(
-      this.id, this.name, this.description, this.price, this.color, this.image);
+      {this.id,
+      this.name,
+      this.description,
+      this.price,
+      this.color,
+      this.image});
 }
 
 final product = [
