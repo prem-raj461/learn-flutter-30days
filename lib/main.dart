@@ -19,13 +19,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: true,
+      
       // home: HomePage(),
-      themeMode: ThemeMode.light,
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-        fontFamily: GoogleFonts.lato().fontFamily,
-        // textTheme: GoogleFonts.latoTextTheme(),
-      ),
+      themeMode: ThemeMode.dark,
+      // theme: ThemeData(
+      //   primarySwatch: Colors.green,
+      //   fontFamily: GoogleFonts.lato().fontFamily,
+      //   appBarTheme: AppBarTheme(
+      //     color: Colors.white,
+      //     elevation: 0.0,
+      //     textTheme: Theme.of(context).textTheme,
+      //   ),
+
+      //   // textTheme: GoogleFonts.latoTextTheme(),
+      // ),
       initialRoute: "/",
       routes: {
         "/": (context) => HomePage(),

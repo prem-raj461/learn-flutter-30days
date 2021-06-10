@@ -8,7 +8,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("First App"),
+        
+        // backgroundColor: Colors.white,
+        // elevation: 0.0,
+        // iconTheme: IconThemeData(color: Colors.black),
+        title: Text(
+          "Catalog App",
+          // style: TextStyle(color: Colors.black),
+        ),
       ),
       body: Center(
         child: Text(
@@ -16,7 +23,9 @@ class HomePage extends StatelessWidget {
           style: TextStyle(color: Colors.green),
         ),
       ),
-      drawer: MyDrawer(),
+      drawer: MyDrawer(
+        
+      ),
     );
   }
 }
